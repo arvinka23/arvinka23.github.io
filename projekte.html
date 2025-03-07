@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projekte - Meine Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Meine Portfolio Website</h1>
+            <p class="tagline">Web-Entwicklung & Design</p>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="index.html"><i class="fas fa-home"></i> Home</a>
+            <a href="ueber-mich.html"><i class="fas fa-user"></i> Über mich</a>
+            <a href="projekte.html" class="active"><i class="fas fa-code-branch"></i> Projekte</a>
+            <a href="#kontakt" class="nav-right"><i class="fas fa-envelope"></i> Kontakt</a>
+        </div>
+    </nav>
+    
+    <div class="page-header">
+        <h2>Meine Projekte</h2>
+        <p>Entdecken Sie meine Arbeiten und Projekte</p>
+    </div>
+    
+    <main>
+        <section id="filter-options">
+            <div class="filter-container">
+                <button class="filter-button active" data-filter="all">Alle</button>
+            </div>
+        </section>
+        
+        <section id="projekte">
+            <div class="projekt-container">
+                <a href="https://github.com/arvinka23/Lernperiode6" class="projekt-wuerfel" data-category="all">
+                    <div class="projekt-inhalt">
+                        <div class="projekt-icon"><i class="fas fa-money-bill-wave"></i></div>
+                        <h3>Budget Planner</h3>
+                        <p>Eine Anwendung zur Verwaltung und Planung persönlicher Finanzen.</p>
+                        <div class="projekt-tags">
+                            <span class="tag">C#</span>
+                            <span class="tag">Finanzplanung</span>
+                            <span class="tag">Desktop App</span>
+                        </div>
+                        <div class="github-link">
+                            <i class="fab fa-github"></i> Zum GitHub Repository
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://github.com/arvinka23/Lernperiode-7" class="projekt-wuerfel" data-category="all">
+                    <div class="projekt-inhalt">
+                        <div class="projekt-icon"><i class="fas fa-chess"></i></div>
+                        <h3>Schach Website</h3>
+                        <p>Eine interaktive Schach-Plattform für Online-Spiele und Lernmaterialien.</p>
+                        <div class="projekt-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">Web</span>
+                        </div>
+                        <div class="github-link">
+                            <i class="fab fa-github"></i> Zum GitHub Repository
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="https://github.com/arvinka23/Lernperiode-4" class="projekt-wuerfel" data-category="all">
+                    <div class="projekt-inhalt">
+                        <div class="projekt-icon"><i class="fas fa-gamepad"></i></div>
+                        <h3>Snake Game</h3>
+                        <p>Eine moderne Umsetzung des klassischen Snake-Spiels mit zusätzlichen Features.</p>
+                        <div class="projekt-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Pygame</span>
+                            <span class="tag">Game Development</span>
+                        </div>
+                        <div class="github-link">
+                            <i class="fab fa-github"></i> Zum GitHub Repository
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="ueber-mich.html">Über mich</a>
+                <a href="projekte.html">Projekte</a>
+                <a href="#kontakt">Kontakt</a>
+            </div>
+            <div class="social-icons">
+                <a href="https://github.com/arvinka23" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/seyedarvin-kasipourazbari-6583b1355/" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:A.KasipourAzbari.inf23@stud.bbbaden.ch" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p class="copyright">&copy; 2025 Meine Portfolio Website. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Einfache Filterung der Projekte
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-button');
+            const projektWuerfel = document.querySelectorAll('.projekt-wuerfel');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Aktiven Button markieren
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    
+                    const filter = button.getAttribute('data-filter');
+                    
+                    projektWuerfel.forEach(projekt => {
+                        if (filter === 'all' || projekt.getAttribute('data-category') === filter) {
+                            projekt.style.display = 'block';
+                        } else {
+                            projekt.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
