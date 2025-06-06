@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seyedarvin Kasipourazbari - Interaktives Entwickler-Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    
+    <!-- Scroll Progress Bar -->
+    <div class="progress-bar"></div>
+    
+    <!-- Matrix Background -->
+    <canvas class="matrix-bg" id="matrix"></canvas>
+    
+    <!-- Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">SK.dev</div>
+            <button class="theme-toggle" aria-label="Hell/Dunkel Modus umschalten">
+                <span class="theme-icon">🌙</span>
+            </button>
+            <div class="hamburger" aria-label="Navigationsmenü umschalten">☰</div>
+            <ul class="nav-links">
+                <li><a href="#home">Start</a></li>
+                <li><a href="#skills">Fähigkeiten</a></li>
+                <li><a href="#about">Über mich</a></li>
+                <li><a href="#projects">Projekte</a></li>
+                <li><a href="#code">Code</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero fade-in">
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <div class="terminal-btn close"></div>
+                <div class="terminal-btn minimize"></div>
+                <div class="terminal-btn maximize"></div>
+            </div>
+            <div class="terminal-content">
+                <div><span class="prompt">seyedarvin@dev:~$</span> whoami</div>
+                <div>Seyedarvin Kasipourazbari</div>
+                <div><span class="prompt">seyedarvin@dev:~$</span> cat fähigkeiten.txt</div>
+                <div>Full-Stack Entwickler | IMS Student | Problemlöser</div>
+                <div><span class="prompt">seyedarvin@dev:~$</span> ls technologien/</div>
+                <div>HTML CSS JavaScript Python C# Rust SQL Docker</div>
+                <div><span class="prompt">seyedarvin@dev:~$</span> echo "Bereit für Praktikumsmöglichkeiten"</div>
+                <div>Bereit für Praktikumsmöglichkeiten</div>
+                <div><span class="prompt">seyedarvin@dev:~$</span> <span class="typing-text" id="typing"></span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section fade-in">
+        <h2 class="section-title">Interaktiver Fähigkeiten-Radar</h2>
+        <div class="skills-radar">
+            <canvas id="skillsCanvas" width="400" height="400"></canvas>
+            <div class="skill-tooltip" id="skillTooltip"></div>
+        </div>
+        <p>Bewege die Maus über den Radar, um detaillierte Informationen zu sehen</p>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about-section fade-in">
+        <h2 class="section-title">Über mich</h2>
+        <div class="about-content">
+            <div class="about-card">
+                <div class="about-header">
+                    <h3>Meine Geschichte</h3>
+                    <div class="about-icon">👨‍💻</div>
+                </div>
+                <div class="about-text">
+                    <p>Ich bin <strong>2006 geboren</strong> und wohne seit <strong>5 Jahren in der Schweiz</strong>. Das Programmieren fasziniert mich – ich arbeite gerne mit Sprachen wie <em>Python, C#, HTML, CSS, JavaScript und SQL</em> und lerne neue Technologien sehr schnell.</p>
+                    
+                    <p>Für mich ist <strong>Programmieren nicht nur Schule, sondern Leidenschaft</strong>. Ich liebe es, Probleme kreativ zu lösen und mich ständig weiterzuentwickeln.</p>
+                    
+                    <div class="passion-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🚀</span>
+                            <span>Schnelles Lernen neuer Technologien</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">💡</span>
+                            <span>Kreative Problemlösung</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">📈</span>
+                            <span>Ständige Weiterentwicklung</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">♟️</span>
+                            <span>Schweizer Schachmeister U20 (2024/2025)</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-languages">
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Programmiersprachen</h4>
+                            <ul>
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>JavaScript</li>
+                                <li>Python</li>
+                                <li>C#</li>
+                                <li>Rust</li>
+                                <li>SQL</li>
+                                <li>Docker</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Sprachen</h4>
+                            <ul>
+                                <li>Deutsch (C1)</li>
+                                <li>Persisch (Muttersprache)</li>
+                                <li>Englisch (B2)</li>
+                                <li>Italienisch (A2)</li>
+                                <li>Französisch (A1)</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Hobbys & Interessen</h4>
+                            <ul>
+                                <li>Schach (Schweizer Meister U20)</li>
+                                <li>Reisen</li>
+                                <li>Musik</li>
+                                <li>Teamarbeit</li>
+                                <li>Schnelle Auffassungsgabe</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="journey-timeline">
+                <h3>Mein Bildungsweg</h3>
+                <div class="timeline-item">
+                    <div class="timeline-year">2013-2019</div>
+                    <div class="timeline-content">
+                        <h4>Primarschule, Teheran, Iran</h4>
+                        <p>Grundausbildung und erste Schritte in der Bildung</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2019-2020</div>
+                    <div class="timeline-content">
+                        <h4>Oberstufe, Teheran, Iran</h4>
+                        <p>Vertiefung der Grundkenntnisse vor dem Umzug</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-content">
+                        <h4>Deutschkurs, Untersiggenthal</h4>
+                        <p>Intensive Sprachausbildung für die Integration in der Schweiz</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2020-2022</div>
+                    <div class="timeline-content">
+                        <h4>Sekundarschule Untersiggenthal</h4>
+                        <p>Anpassung an das Schweizer Bildungssystem und Sprachvertiefung</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2022-2023</div>
+                    <div class="timeline-content">
+                        <h4>Bezirksschule Turgi</h4>
+                        <p>Vorbereitung auf die höhere Bildung und Spezialisierung</p>
+                    </div>
+                </div>
+                <div class="timeline-item active">
+                    <div class="timeline-year">2023-heute</div>
+                    <div class="timeline-content">
+                        <h4>IMS - Applikationsentwicklung, BBBaden</h4>
+                        <p>Fachrichtung Applikationsentwicklung mit voraussichtlichem Abschluss Sommer 2026</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section fade-in">
+        <h2 class="section-title">Ausgewählte Projekte</h2>
+        <div class="projects-grid">
+            <div class="project-card" data-project="budget">
+                <h3 class="project-title">Budget Planner Pro</h3>
+                <p>Erweiterte Desktop-Anwendung für Finanzverwaltung mit Echtzeitanalysen, automatischer Kategorisierung und prädiktiver Budgetierung mithilfe von Machine Learning-Algorithmen.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">.NET 6</span>
+                    <span class="tech-tag">WPF</span>
+                    <span class="tech-tag">SQLite</span>
+                    <span class="tech-tag">ML.NET</span>
+                </div>
+                <button onclick="openProject('budget')">Projekt ansehen</button>
+            </div>
+            
+            <div class="project-card" data-project="chess">
+                <h3 class="project-title">Echtzeit-Schach-Plattform</h3>
+                <p>Mehrspieler-Schachplattform mit WebSocket-Verbindungen, KI-Gegnern, Turniersystem und erweiterten Analyse-Dashboard.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">Socket.io</span>
+                    <span class="tech-tag">MongoDB</span>
+                    <span class="tech-tag">Chess.js</span>
+                </div>
+                <button onclick="openProject('chess')">Projekt ansehen</button>
+            </div>
+            
+            <div class="project-card" data-project="snake">
+                <h3 class="project-title">Neuronales Snake AI</h3>
+                <p>Verbessertes Snake-Spiel mit neuronaler Netzwerk-KI, die optimal spielen lernt mithilfe genetischer Algorithmen und Reinforcement Learning.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Pygame</span>
+                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">NumPy</span>
+                    <span class="tech-tag">OpenAI Gym</span>
+                </div>
+                <button onclick="openProject('snake')">Projekt ansehen</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Code Editor Section -->
+    <section id="code" class="code-editor-section fade-in">
+        <h2 class="section-title">Live Code Demo</h2>
+        <div class="code-editor">
+            <div class="editor-header">
+                <div class="editor-tabs">
+                    <div class="tab active" onclick="switchTab('javascript')">JavaScript</div>
+                    <div class="tab" onclick="switchTab('csharp')">C#</div>
+                    <div class="tab" onclick="switchTab('python')">Python</div>
+                </div>
+                <button class="run-btn" onclick="runCode()">Code ausführen</button>
+            </div>
+            <div class="editor-content">
+                <div id="javascript-code" contenteditable="true" spellcheck="false">
+<span class="line-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12</span><span class="comment">// Echtzeitdatenverarbeitung mit WebSockets</span>
+<span class="keyword">class</span> <span class="function">DatenProcessor</span> {
+    <span class="keyword">constructor</span>() {
+        <span class="keyword">this</span>.socket = <span class="keyword">new</span> WebSocket(<span class="string">'ws://localhost:8080'</span>);
+        <span class="keyword">this</span>.setupEventListeners();
+    }
+    
+    <span class="function">setupEventListeners</span>() {
+        <span class="keyword">this</span>.socket.onmessage = (event) => {
+            <span class="keyword">const</span> daten = JSON.parse(event.data);
+            <span class="keyword">this</span>.verarbeiteDaten(daten);
+        };
+    }
+}
+                </div>
+                <div id="csharp-code" contenteditable="true" spellcheck="false" style="display: none;">
+<span class="line-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12</span><span class="comment">// Asynchrone Datenverarbeitung mit LINQ</span>
+<span class="keyword">public async</span> Task<List<VerarbeiteDaten>> <span class="function">VerarbeiteDatenAsync</span>()
+{
+    <span class="keyword">var</span> tasks = rohDaten.Select(<span class="keyword">async</span> element => 
+    {
+        <span class="keyword">var</span> ergebnis = <span class="keyword">await</span> VerarbeiteElementAsync(element);
+        <span class="keyword">return new</span> VerarbeiteDaten { Ergebnis = ergebnis };
+    });
+    
+    <span class="keyword">var</span> ergebnisse = <span class="keyword">await</span> Task.WhenAll(tasks);
+    <span class="keyword">return</span> ergebnisse.ToList();
+}
+                </div>
+                <div id="python-code" contenteditable="true" spellcheck="false" style="display: none;">
+<span class="line-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12</span><span class="comment"># Machine Learning Modell Training</span>
+<span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf
+<span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split
+
+<span class="keyword">def</span> <span class="function">erstelle_neuronales_netzwerk</span>(eingabe_form):
+    model = tf.keras.Sequential([
+        tf.keras.layers.Dense(<span class="string">128</span>, activation=<span class="string">'relu'</span>, input_shape=eingabe_form),
+        tf.keras.layers.Dropout(<span class="string">0.2</span>),
+        tf.keras.layers.Dense(<span class="string">64</span>, activation=<span class="string">'relu'</span>),
+        tf.keras.layers.Dense(<span class="string">1</span>, activation=<span class="string">'sigmoid'</span>)
+    ])
+    <span class="keyword">return</span> model
+                </div>
+                <div class="output-console" id="output-console"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section fade-in">
+        <h2 class="section-title">Lass uns vernetzen</h2>
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <input type="text" class="form-input" id="name" placeholder=" " required>
+                <label class="form-label" for="name">Dein Name</label>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-input" id="email" placeholder=" " required>
+                <label class="form-label" for="email">E-Mail-Adresse</label>
+            </div>
+            <div class="form-group">
+                <textarea class="form-input" id="message" rows="5" placeholder=" " required></textarea>
+                <label class="form-label" for="message">Nachricht</label>
+            </div>
+            <button type="submit" class="submit-btn">Nachricht senden</button>
+            <div class="form-loading" id="formLoading" style="display: none;">Wird gesendet...</div>
+        </form>
+    </section>
+
+    <!-- Modal for Project Details -->
+    <div class="modal" id="projectModal" role="dialog" aria-labelledby="modalTitle">
+        <div class="modal-content">
+            <span class="close-modal" aria-label="Modal schließen">×</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
