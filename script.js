@@ -323,7 +323,7 @@ const projectData = {
     },
     chess: {
         title: '♟️ Schachspiel',
-        description: 'Ein vollständig funktionsfähiges Online-Schachspiel mit Timer-Funktion. Das Projekt demonstriert moderne Web-Entwicklung mit interaktiven Spielmechaniken und Echtzeit-Timer-System. Spieler können gegeneinander antreten mit einem 10-Minuten-Timer pro Spieler.',
+        description: 'Ein Python-basiertes Schach-Analyse-Tool, das meine Leidenschaft für Schach mit Programmierung verbindet.',
         features: [
             'Vollständige Schachregeln-Implementierung',
             '10-Minuten-Timer pro Spieler',
