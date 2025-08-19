@@ -107,7 +107,14 @@ const commands = [
     'npm start',
     'docker build .',
     'python train_model.py',
-    'dotnet run'
+    'dotnet run',
+    'echo "IMS Praktikum 2026 gesucht!"',
+    'ls projekte/',
+    'cat cv.txt',
+    'cargo run',
+    'git push origin main',
+    'echo "Kantonsschule Baden"',
+    'cat praktikum_anforderungen.txt'
 ];
 let commandIndex = 0;
 let charIndex = 0;
@@ -272,23 +279,61 @@ document.querySelector('.hamburger').addEventListener('click', () => {
 
 // Project modal
 const projectData = {
-    budget: {
-        title: 'Budget Planner Pro',
-        description: 'Advanced financial management desktop application with real-time analytics, automated categorization, and predictive budgeting using machine learning algorithms.',
-        github: 'https://github.com/seyedarvin/budget-planner-pro',
-        demo: 'https://budget-planner-pro.demo'
+    icontale: {
+        title: '🎮 IconTale',
+        description: 'Eine interaktive Emoji-Story-Plattform, die Kreativität und Spielspaß verbindet. Spieler können kreative Geschichten mit Emojis schreiben und diese von anderen erraten lassen. Das Projekt demonstriert moderne Web-Entwicklung mit Echtzeit-Kommunikation und benutzerfreundlicher Oberfläche.',
+        features: [
+            'Lobby-System für Multiplayer-Spiele',
+            'Echtzeit-WebSocket-Kommunikation',
+            'Emoji-basierte Story-Erstellung',
+            'Voting-System für die besten Geschichten',
+            'Responsive Design für alle Geräte'
+        ],
+        github: 'https://github.com/arvinka23/icontale',
+        demo: 'https://icontale.onrender.com/',
+        status: 'Live'
+    },
+    fitness: {
+        title: '💪 FitnessTracker',
+        description: 'Eine umfassende C# Desktop-Anwendung für Fitness-Tracking und -Management. Das Projekt zeigt fortgeschrittene Software-Entwicklung mit Datenbankintegration, Benutzeroberfläche-Design und Datenvisualisierung.',
+        features: [
+            'Workout-Protokollierung mit Übungen, Gewicht und Wiederholungen',
+            'Körpermaße-Verfolgung mit Verlaufsdiagrammen',
+            'Trainingsplan-Erstellung und -Verwaltung',
+            'Entity Framework Core für Datenbankzugriff',
+            'WinForms-Benutzeroberfläche mit Charts'
+        ],
+        github: 'https://github.com/arvinka23/Fitnesstracker',
+        demo: null,
+        status: 'In Entwicklung'
+    },
+    solana: {
+        title: '🤖 Rust Solana Bot',
+        description: 'Ein fortschrittlicher Trading-Bot für die Solana-Blockchain, entwickelt in Rust. Das Projekt demonstriert Blockchain-Integration, automatisierte Handelsstrategien und Echtzeit-Datenverarbeitung.',
+        features: [
+            'Automatisierte Handelsstrategien',
+            'Solana Blockchain-Integration',
+            'WebSocket-basierte Echtzeit-Daten',
+            'Portfolio-Management und Risikoanalyse',
+            'Rust für Performance und Sicherheit'
+        ],
+        github: 'https://github.com/arvinka23/rust-solana-bot',
+        demo: null,
+        status: 'In Entwicklung'
     },
     chess: {
-        title: 'Real-time Chess Platform',
-        description: 'Multiplayer chess platform with WebSocket connections, AI opponents, tournament system, and advanced analytics dashboard.',
-        github: 'https://github.com/arvinka23/Schachspiel',
-        demo: 'https://schachspiel.demo'
-    },
-    snake: {
-        title: 'Neural Snake AI',
-        description: 'Enhanced Snake game with neural network AI that learns to play optimally using genetic algorithms and reinforcement learning.',
-        github: 'https://github.com/seyedarvin/neural-snake',
-        demo: 'https://neural-snake.demo'
+        title: '♟️ Schach-Analyse Tool',
+        description: 'Ein Python-basiertes Schach-Analyse-Tool, das meine Leidenschaft für Schach mit Programmierung verbindet. Analysiert Partien, erstellt Eröffnungsdatenbanken und bietet personalisierte Trainingsvorschläge.',
+        features: [
+            'Partie-Analyse mit Chess Engine',
+            'Eröffnungsdatenbank und -Training',
+            'Statistik-Dashboard für Spieler',
+            'Personalisiertes Training basierend auf Schwächen',
+            'Export-Funktionen für Turnierberichte'
+        ],
+        github: null,
+        demo: null,
+        status: 'Abgeschlossen'
     }
 };
 
@@ -297,12 +342,32 @@ function openProject(projectId) {
     const modalBody = document.getElementById('modal-body');
     const data = projectData[projectId];
     
+    let linksHTML = '';
+    if (data.github) {
+        linksHTML += `<a href="${data.github}" target="_blank" class="modal-link github-link">📂 GitHub Repository</a>`;
+    }
+    if (data.demo) {
+        linksHTML += `<a href="${data.demo}" target="_blank" class="modal-link demo-link">🌐 Live Demo</a>`;
+    }
+    
+    const featuresHTML = data.features ? `
+        <div class="project-features">
+            <h4>Hauptfunktionen:</h4>
+            <ul>
+                ${data.features.map(feature => `<li>${feature}</li>`).join('')}
+            </ul>
+        </div>
+    ` : '';
+    
     modalBody.innerHTML = `
-        <h3 id="modalTitle">${data.title}</h3>
-        <p>${data.description}</p>
-        <div class="modal-links">
-            <a href="${data.github}" target="_blank">GitHub</a>
-            <a href="${data.demo}" target="_blank">Live Demo</a>
+        <div class="modal-header">
+            <h3 id="modalTitle">${data.title}</h3>
+            <span class="project-status ${data.status.toLowerCase().replace(' ', '-')}">${data.status}</span>
+        </div>
+        <div class="modal-content">
+            <p class="project-description">${data.description}</p>
+            ${featuresHTML}
+            ${linksHTML ? `<div class="modal-links">${linksHTML}</div>` : ''}
         </div>
     `;
     
@@ -338,6 +403,12 @@ function runCode() {
     } else {
         outputConsole.textContent = 'Execution only supported for JavaScript';
     }
+}
+
+// CV Download function
+function downloadCV() {
+    // For now, this will show an alert. In a real implementation, you would link to an actual CV file
+    alert('Lebenslauf-Download wird vorbereitet...\n\nIn einer echten Implementierung würde hier Ihr Lebenslauf als PDF heruntergeladen werden.');
 }
 
 // Contact form validation with loading indicator

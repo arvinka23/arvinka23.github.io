@@ -33,6 +33,7 @@
                 <li><a href="#about">Über mich</a></li>
                 <li><a href="#projects">Projekte</a></li>
                 <li><a href="#code">Code</a></li>
+                <li><a href="#internship">Praktikum</a></li>
                 <li><a href="#contact">Kontakt</a></li>
             </ul>
         </nav>
@@ -55,6 +56,11 @@
                 <div>HTML CSS JavaScript Python C# Rust SQL Docker</div>
                 <div><span class="prompt">seyedarvin@dev:~$</span> echo "Bereit für Praktikumsmöglichkeiten"</div>
                 <div>Bereit für Praktikumsmöglichkeiten</div>
+                <div><span class="prompt">seyedarvin@dev:~$</span> cat praktikum_status.txt</div>
+                <div>🎯 Aktuell auf der Suche nach einem IMS Praktikum</div>
+                <div>📅 Verfügbar: August 2026 (12 Monate)</div>
+                <div>📍 Standort: Schweiz (flexibel)</div>
+                <div>🎓 Kantonsschule Baden - IMS Applikationsentwicklung</div>
                 <div><span class="prompt">seyedarvin@dev:~$</span> <span class="typing-text" id="typing"></span></div>
             </div>
         </div>
@@ -73,118 +79,189 @@
     <!-- About Me Section -->
     <section id="about" class="about-section fade-in">
         <h2 class="section-title">Über mich</h2>
-        <div class="about-content">
-            <div class="about-card">
-                <div class="about-header">
-                    <h3>Meine Geschichte</h3>
-                    <div class="about-icon">👨‍💻</div>
-                </div>
-                <div class="about-text">
-                    <p>Ich bin <strong>2006 geboren</strong> und wohne seit <strong>5 Jahren in der Schweiz</strong>. Das Programmieren fasziniert mich – ich arbeite gerne mit Sprachen wie <em>Python, C#, HTML, CSS, JavaScript und SQL</em> und lerne neue Technologien sehr schnell.</p>
-                    
-                    <p>Für mich ist <strong>Programmieren nicht nur Schule, sondern Leidenschaft</strong>. Ich liebe es, Probleme kreativ zu lösen und mich ständig weiterzuentwickeln.</p>
-                    
-                    <div class="passion-highlights">
-                        <div class="highlight-item">
-                            <span class="highlight-icon">🚀</span>
-                            <span>Schnelles Lernen neuer Technologien</span>
+        
+        <!-- Personal Info Cards -->
+        <div class="personal-info-grid">
+            <div class="info-card">
+                <div class="info-icon">👨‍💻</div>
+                <h3>Wer bin ich?</h3>
+                <p><strong>Seyedarvin Kasipourazbari</strong>, geboren 2006, wohne seit 5 Jahren in der Schweiz. IMS Student der Kantonsschule Baden mit Schwerpunkt Applikationsentwicklung.</p>
+            </div>
+            
+            <div class="info-card">
+                <div class="info-icon">🎯</div>
+                <h3>Meine Mission</h3>
+                <p>Programmieren ist für mich eine Lebenseinstellung. Ich liebe es, komplexe Probleme zu analysieren und innovative Lösungen zu entwickeln.</p>
+            </div>
+            
+            <div class="info-card">
+                <div class="info-icon">🚀</div>
+                <h3>Meine Stärken</h3>
+                <p>Schnelles Lernen neuer Technologien, analytisches Denken, strategisches Problemlösen und kontinuierliche Weiterentwicklung.</p>
+            </div>
+        </div>
+
+        <!-- Skills Overview -->
+        <div class="skills-overview">
+            <h3 class="section-subtitle">Meine Fähigkeiten</h3>
+            <div class="skills-cards-grid">
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon">💻</div>
+                        <h4>Programmiersprachen</h4>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">C#</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
                         </div>
-                        <div class="highlight-item">
-                            <span class="highlight-icon">💡</span>
-                            <span>Kreative Problemlösung</span>
+                        <div class="skill-item">
+                            <span class="skill-name">JavaScript</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
                         </div>
-                        <div class="highlight-item">
-                            <span class="highlight-icon">📈</span>
-                            <span>Ständige Weiterentwicklung</span>
+                        <div class="skill-item">
+                            <span class="skill-name">Python</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
                         </div>
-                        <div class="highlight-item">
-                            <span class="highlight-icon">♟️</span>
-                            <span>Schweizer Schachmeister U20 (2024/2025)</span>
+                        <div class="skill-item">
+                            <span class="skill-name">HTML/CSS</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Rust</span>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="skills-languages">
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h4>Programmiersprachen</h4>
-                            <ul>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>JavaScript</li>
-                                <li>Python</li>
-                                <li>C#</li>
-                                <li>Rust</li>
-                                <li>SQL</li>
-                                <li>Docker</li>
-                            </ul>
+
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon">🌍</div>
+                        <h4>Sprachen</h4>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-name">Deutsch</span>
+                            <span class="skill-level">C1 - Fließend</span>
                         </div>
-                        <div class="skill-category">
-                            <h4>Sprachen</h4>
-                            <ul>
-                                <li>Deutsch (C1)</li>
-                                <li>Persisch (Muttersprache)</li>
-                                <li>Englisch (B2)</li>
-                                <li>Italienisch (A2)</li>
-                                <li>Französisch (A1)</li>
-                            </ul>
+                        <div class="skill-item">
+                            <span class="skill-name">Persisch</span>
+                            <span class="skill-level">Muttersprache</span>
                         </div>
-                        <div class="skill-category">
-                            <h4>Hobbys & Interessen</h4>
-                            <ul>
-                                <li>Schach (Schweizer Meister U20)</li>
-                                <li>Reisen</li>
-                                <li>Musik</li>
-                                <li>Teamarbeit</li>
-                                <li>Schnelle Auffassungsgabe</li>
-                            </ul>
+                        <div class="skill-item">
+                            <span class="skill-name">Englisch</span>
+                            <span class="skill-level">B2 - Gut</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Italienisch</span>
+                            <span class="skill-level">A2 - Grundkenntnisse</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-name">Französisch</span>
+                            <span class="skill-level">A1 - Basiskenntnisse</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-header">
+                        <div class="skill-icon">🎯</div>
+                        <h4>Soft Skills</h4>
+                    </div>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span class="skill-icon-small">♟️</span>
+                            <span class="skill-name">Strategisches Denken</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-icon-small">🤝</span>
+                            <span class="skill-name">Teamarbeit</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-icon-small">💡</span>
+                            <span class="skill-name">Problemlösung</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-icon-small">📚</span>
+                            <span class="skill-name">Lernbereitschaft</span>
+                        </div>
+                        <div class="skill-item">
+                            <span class="skill-icon-small">🌍</span>
+                            <span class="skill-name">Interkulturell</span>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="journey-timeline">
-                <h3>Mein Bildungsweg</h3>
+        </div>
+
+        <!-- Journey Timeline -->
+        <div class="journey-section">
+            <h3 class="section-subtitle">Mein Bildungsweg</h3>
+            <div class="timeline-container">
                 <div class="timeline-item">
-                    <div class="timeline-year">2013-2019</div>
+                    <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <h4>Primarschule, Teheran, Iran</h4>
+                        <div class="timeline-year">2013-2019</div>
+                        <h4>Primarschule, Teheran</h4>
                         <p>Grundausbildung und erste Schritte in der Bildung</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">2019-2020</div>
+                    <div class="timeline-marker"></div>
                     <div class="timeline-content">
-                        <h4>Oberstufe, Teheran, Iran</h4>
+                        <div class="timeline-year">2019-2020</div>
+                        <h4>Oberstufe, Teheran</h4>
                         <p>Vertiefung der Grundkenntnisse vor dem Umzug</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">2020</div>
+                    <div class="timeline-marker"></div>
                     <div class="timeline-content">
+                        <div class="timeline-year">2020</div>
                         <h4>Deutschkurs, Untersiggenthal</h4>
-                        <p>Intensive Sprachausbildung für die Integration in der Schweiz</p>
+                        <p>Intensive Sprachausbildung für die Integration</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">2020-2022</div>
+                    <div class="timeline-marker"></div>
                     <div class="timeline-content">
+                        <div class="timeline-year">2020-2022</div>
                         <h4>Sekundarschule Untersiggenthal</h4>
-                        <p>Anpassung an das Schweizer Bildungssystem und Sprachvertiefung</p>
+                        <p>Anpassung an das Schweizer Bildungssystem</p>
                     </div>
                 </div>
                 <div class="timeline-item">
-                    <div class="timeline-year">2022-2023</div>
+                    <div class="timeline-marker"></div>
                     <div class="timeline-content">
+                        <div class="timeline-year">2022-2023</div>
                         <h4>Bezirksschule Turgi</h4>
-                        <p>Vorbereitung auf die höhere Bildung und Spezialisierung</p>
+                        <p>Vorbereitung auf die höhere Bildung</p>
                     </div>
                 </div>
                 <div class="timeline-item active">
-                    <div class="timeline-year">2023-heute</div>
+                    <div class="timeline-marker active"></div>
                     <div class="timeline-content">
-                        <h4>IMS - Applikationsentwicklung, BBBaden</h4>
-                        <p>Fachrichtung Applikationsentwicklung mit voraussichtlichem Abschluss Sommer 2026</p>
+                        <div class="timeline-year">2023-2026</div>
+                        <h4>IMS - Applikationsentwicklung</h4>
+                        <p>Kantonsschule Baden - Fachrichtung Applikationsentwicklung</p>
+                    </div>
+                </div>
+                <div class="timeline-item future">
+                    <div class="timeline-marker future"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2026-2027</div>
+                        <h4>IMS Praktikum (12 Monate)</h4>
+                        <p>Einjähriges Praktikum in der Applikationsentwicklung</p>
                     </div>
                 </div>
             </div>
@@ -195,112 +272,162 @@
     <section id="projects" class="projects-section fade-in">
         <h2 class="section-title">Ausgewählte Projekte</h2>
         <div class="projects-grid">
-            <div class="project-card" data-project="budget">
-                <h3 class="project-title">Budget Planner Pro</h3>
-                <p>Erweiterte Desktop-Anwendung für Finanzverwaltung mit Echtzeitanalysen, automatischer Kategorisierung und prädiktiver Budgetierung mithilfe von Machine Learning-Algorithmen.</p>
-                <div class="tech-stack">
-                    <span class="tech-tag">C#</span>
-                    <span class="tech-tag">.NET 6</span>
-                    <span class="tech-tag">WPF</span>
-                    <span class="tech-tag">SQLite</span>
-                    <span class="tech-tag">ML.NET</span>
+            <div class="project-card" data-project="icontale">
+                <div class="project-header">
+                    <h3 class="project-title">🎮 IconTale</h3>
+                    <span class="project-status live">Live</span>
                 </div>
-                <button onclick="openProject('budget')">Projekt ansehen</button>
-            </div>
-            
-            <div class="project-card" data-project="chess">
-                <h3 class="project-title">Echtzeit-Schach-Plattform</h3>
-                <p>Mehrspieler-Schachplattform mit WebSocket-Verbindungen, KI-Gegnern, Turniersystem und erweiterten Analyse-Dashboard.</p>
+                <p>Eine interaktive Emoji-Story-Plattform, wo Spieler kreative Geschichten mit Emojis schreiben und erraten können. Features inklusive Lobby-System, Echtzeit-Spiel, und KI-gestützte Emoji-Vorschläge.</p>
                 <div class="tech-stack">
                     <span class="tech-tag">JavaScript</span>
                     <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">Socket.io</span>
-                    <span class="tech-tag">MongoDB</span>
-                    <span class="tech-tag">Chess.js</span>
+                    <span class="tech-tag">WebSocket</span>
+                    <span class="tech-tag">HTML/CSS</span>
+                    <span class="tech-tag">Render</span>
                 </div>
-                <button onclick="openProject('chess')">Projekt ansehen</button>
+                <div class="project-links">
+                    <button onclick="openProject('icontale')" class="project-link">📖 Details</button>
+                </div>
             </div>
             
-            <div class="project-card" data-project="snake">
-                <h3 class="project-title">Neuronales Snake AI</h3>
-                <p>Verbessertes Snake-Spiel mit neuronaler Netzwerk-KI, die optimal spielen lernt mithilfe genetischer Algorithmen und Reinforcement Learning.</p>
+            <div class="project-card" data-project="fitness">
+                <div class="project-header">
+                    <h3 class="project-title">💪 FitnessTracker</h3>
+                    <span class="project-status development">In Entwicklung</span>
+                </div>
+                <p>Umfassende C# Desktop-Anwendung für Fitness-Tracking mit Workout-Protokollierung, Körpermaße-Verfolgung, Trainingsplänen und Fortschrittsvisualisierung. Verwendet Entity Framework Core und SQL Server.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">C#</span>
+                    <span class="tech-tag">.NET</span>
+                    <span class="tech-tag">WinForms</span>
+                    <span class="tech-tag">Entity Framework</span>
+                    <span class="tech-tag">SQL Server</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/arvinka23/Fitnesstracker" target="_blank" class="project-link github-link">📂 GitHub</a>
+                    <button onclick="openProject('fitness')" class="project-link">📖 Details</button>
+                </div>
+            </div>
+            
+            <div class="project-card" data-project="solana">
+                <div class="project-header">
+                    <h3 class="project-title">🤖 Rust Solana Bot</h3>
+                    <span class="project-status development">In Entwicklung</span>
+                </div>
+                <p>Ein fortschrittlicher Trading-Bot für die Solana-Blockchain, entwickelt in Rust. Implementiert automatisierte Handelsstrategien, Portfolio-Management und Echtzeit-Marktanalyse mit WebSocket-Verbindungen.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">Rust</span>
+                    <span class="tech-tag">Solana</span>
+                    <span class="tech-tag">WebSocket</span>
+                    <span class="tech-tag">Blockchain</span>
+                    <span class="tech-tag">Trading API</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/arvinka23/rust-solana-bot" target="_blank" class="project-link github-link">📂 GitHub</a>
+                    <button onclick="openProject('solana')" class="project-link">📖 Details</button>
+                </div>
+            </div>
+            
+            <div class="project-card" data-project="chess">
+                <div class="project-header">
+                    <h3 class="project-title">♟️ Schach-Analyse Tool</h3>
+                    <span class="project-status completed">Abgeschlossen</span>
+                </div>
+                <p>Ein Python-basiertes Schach-Analyse-Tool, das meine Leidenschaft für Schach mit Programmierung verbindet. Analysiert Partien, erstellt Eröffnungsdatenbanken und bietet Trainingsvorschläge.</p>
                 <div class="tech-stack">
                     <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Pygame</span>
-                    <span class="tech-tag">TensorFlow</span>
-                    <span class="tech-tag">NumPy</span>
-                    <span class="tech-tag">OpenAI Gym</span>
+                    <span class="tech-tag">Chess Engine</span>
+                    <span class="tech-tag">Data Analysis</span>
+                    <span class="tech-tag">GUI</span>
                 </div>
-                <button onclick="openProject('snake')">Projekt ansehen</button>
+                <div class="project-links">
+                    <button onclick="openProject('chess')" class="project-link">📖 Details</button>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Live Code Editor Section -->
-    <section id="code" class="code-editor-section fade-in">
-        <h2 class="section-title">Live Code Demo</h2>
-        <div class="code-editor">
-            <div class="editor-header">
-                <div class="editor-tabs">
-                    <div class="tab active" onclick="switchTab('javascript')">JavaScript</div>
-                    <div class="tab" onclick="switchTab('csharp')">C#</div>
-                    <div class="tab" onclick="switchTab('python')">Python</div>
-                </div>
-                <button class="run-btn" onclick="runCode()">Code ausführen</button>
-            </div>
-            <div class="editor-content">
-                <div id="javascript-code" contenteditable="true" spellcheck="false">
-<span class="line-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12</span><span class="comment">// Echtzeitdatenverarbeitung mit WebSockets</span>
-<span class="keyword">class</span> <span class="function">DatenProcessor</span> {
-    <span class="keyword">constructor</span>() {
-        <span class="keyword">this</span>.socket = <span class="keyword">new</span> WebSocket(<span class="string">'ws://localhost:8080'</span>);
-        <span class="keyword">this</span>.setupEventListeners();
-    }
-    
-    <span class="function">setupEventListeners</span>() {
-        <span class="keyword">this</span>.socket.onmessage = (event) => {
-            <span class="keyword">const</span> daten = JSON.parse(event.data);
-            <span class="keyword">this</span>.verarbeiteDaten(daten);
-        };
-    }
-}
-                </div>
-                <div id="csharp-code" contenteditable="true" spellcheck="false" style="display: none;">
-<span class="line-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12</span><span class="comment">// Asynchrone Datenverarbeitung mit LINQ</span>
-<span class="keyword">public async</span> Task<List<VerarbeiteDaten>> <span class="function">VerarbeiteDatenAsync</span>()
-{
-    <span class="keyword">var</span> tasks = rohDaten.Select(<span class="keyword">async</span> element => 
-    {
-        <span class="keyword">var</span> ergebnis = <span class="keyword">await</span> VerarbeiteElementAsync(element);
-        <span class="keyword">return new</span> VerarbeiteDaten { Ergebnis = ergebnis };
-    });
-    
-    <span class="keyword">var</span> ergebnisse = <span class="keyword">await</span> Task.WhenAll(tasks);
-    <span class="keyword">return</span> ergebnisse.ToList();
-}
-                </div>
-                <div id="python-code" contenteditable="true" spellcheck="false" style="display: none;">
-<span class="line-numbers">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>10<br>11<br>12</span><span class="comment"># Machine Learning Modell Training</span>
-<span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf
-<span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split
 
-<span class="keyword">def</span> <span class="function">erstelle_neuronales_netzwerk</span>(eingabe_form):
-    model = tf.keras.Sequential([
-        tf.keras.layers.Dense(<span class="string">128</span>, activation=<span class="string">'relu'</span>, input_shape=eingabe_form),
-        tf.keras.layers.Dropout(<span class="string">0.2</span>),
-        tf.keras.layers.Dense(<span class="string">64</span>, activation=<span class="string">'relu'</span>),
-        tf.keras.layers.Dense(<span class="string">1</span>, activation=<span class="string">'sigmoid'</span>)
-    ])
-    <span class="keyword">return</span> model
+
+    <!-- Internship Section -->
+    <section id="internship" class="internship-section fade-in">
+        <h2 class="section-title">🎯 Praktikumssuche</h2>
+        <div class="internship-content">
+            <div class="internship-card">
+                <div class="internship-header">
+                    <h3>Warum ich?</h3>
+                    <div class="internship-icon">💼</div>
                 </div>
-                <div class="output-console" id="output-console"></div>
+                <div class="internship-text">
+                    <p>Als <strong>IMS Student der Kantonsschule Baden mit Schwerpunkt Applikationsentwicklung</strong> suche ich ein einjähriges Praktikum (August 2026 - Juli 2027), um meine praktischen Fähigkeiten zu erweitern und in einem professionellen Umfeld zu arbeiten.</p>
+                    
+                    <div class="internship-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🚀</span>
+                            <span>Erfahrung mit modernen Technologien (C#, JavaScript, Python, Rust)</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">💡</span>
+                            <span>Problemlösungsorientiert und schnell lernfähig</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🌍</span>
+                            <span>Mehrsprachig (Deutsch C1, Englisch B2, Persisch Muttersprache)</span>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">♟️</span>
+                            <span>Strategisches Denken durch Schach (Schweizer Meister U20)</span>
+                        </div>
+                    </div>
+                </div>
             </div>
+            
+            <div class="internship-details">
+                <div class="detail-card">
+                    <h4>📅 Verfügbarkeit</h4>
+                    <ul>
+                        <li><strong>Zeitraum:</strong> August 2026 - Juli 2027</li>
+                        <li><strong>Dauer:</strong> 12 Monate (einjähriges Praktikum)</li>
+                        <li><strong>Standort:</strong> Schweiz (flexibel)</li>
+                        <li><strong>Arbeitsmodell:</strong> Vor Ort oder Hybrid</li>
+                    </ul>
+                </div>
+                
+                <div class="detail-card">
+                    <h4>🎯 Interessengebiete</h4>
+                    <ul>
+                        <li>Full-Stack Entwicklung</li>
+                        <li>Web-Entwicklung</li>
+                        <li>Desktop-Anwendungen</li>
+                        <li>Blockchain-Technologien</li>
+                        <li>Machine Learning</li>
+                    </ul>
+                </div>
+                
+                <div class="detail-card">
+                    <h4>📚 Aktuelle Ausbildung</h4>
+                    <ul>
+                        <li><strong>Schule:</strong> Kantonsschule Baden</li>
+                        <li><strong>Richtung:</strong> IMS Applikationsentwicklung</li>
+                        <li><strong>Abschluss:</strong> Sommer 2026</li>
+                        <li><strong>Fokus:</strong> C#, .NET, Web-Technologien</li>
+                        <li><strong>IPA:</strong> Individuelle praktische Arbeit</li>
+                    </ul>
+                </div>
+            </div>
+            
+
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact-section fade-in">
         <h2 class="section-title">Lass uns vernetzen</h2>
+        <div class="contact-actions">
+            <a href="285-cv-pattern.docx" class="cv-download-btn" download>
+                📄 Lebenslauf herunterladen
+            </a>
+        </div>
         <form class="contact-form" id="contactForm">
             <div class="form-group">
                 <input type="text" class="form-input" id="name" placeholder=" " required>
