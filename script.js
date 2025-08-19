@@ -322,18 +322,18 @@ const projectData = {
         status: 'In Entwicklung'
     },
     chess: {
-        title: '♟️ Schach-Analyse Tool',
-        description: 'Ein Python-basiertes Schach-Analyse-Tool, das meine Leidenschaft für Schach mit Programmierung verbindet. Analysiert Partien, erstellt Eröffnungsdatenbanken und bietet personalisierte Trainingsvorschläge.',
+        title: '♟️ Schachspiel',
+        description: 'Ein vollständig funktionsfähiges Online-Schachspiel mit Timer-Funktion. Das Projekt demonstriert moderne Web-Entwicklung mit interaktiven Spielmechaniken und Echtzeit-Timer-System. Spieler können gegeneinander antreten mit einem 10-Minuten-Timer pro Spieler.',
         features: [
-            'Partie-Analyse mit Chess Engine',
-            'Eröffnungsdatenbank und -Training',
-            'Statistik-Dashboard für Spieler',
-            'Personalisiertes Training basierend auf Schwächen',
-            'Export-Funktionen für Turnierberichte'
+            'Vollständige Schachregeln-Implementierung',
+            '10-Minuten-Timer pro Spieler',
+            'Responsive Design für alle Geräte',
+            'Echtzeit-Spielstatus-Anzeige',
+            'Hosted auf GitHub Pages'
         ],
         github: null,
-        demo: null,
-        status: 'Abgeschlossen'
+        demo: 'https://arvinka23.github.io/Schachspiel/',
+        status: 'Live'
     }
 };
 
