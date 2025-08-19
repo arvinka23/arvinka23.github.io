@@ -305,7 +305,7 @@ const projectData = {
         ],
         github: 'https://github.com/arvinka23/Fitnesstracker',
         demo: null,
-        status: 'In Entwicklung'
+        status: 'Abgeschlossen'
     },
     solana: {
         title: '🤖 Rust Solana Bot',
@@ -319,7 +319,7 @@ const projectData = {
         ],
         github: 'https://github.com/arvinka23/rust-solana-bot',
         demo: null,
-        status: 'In Entwicklung'
+        status: 'Abgeschlossen'
     },
     chess: {
         title: '♟️ Schachspiel',
@@ -413,7 +413,6 @@ function downloadCV() {
 
 // Contact form validation with loading indicator
 document.getElementById('contactForm').addEventListener('submit', (e) => {
-    e.preventDefault();
     const name = document.getElementById('name').value.trim();
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
@@ -424,16 +423,14 @@ document.getElementById('contactForm').addEventListener('submit', (e) => {
         if (/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
             loading.style.display = 'block';
             submitBtn.disabled = true;
-            setTimeout(() => {
-                loading.style.display = 'none';
-                submitBtn.disabled = false;
-                alert('Thank you for your message! I will get back to you soon.');
-                document.getElementById('contactForm').reset();
-            }, 1000);
+            // Form will be submitted to Formspree automatically
+            // No need to prevent default or handle manually
         } else {
-            alert('Please enter a valid email address.');
+            e.preventDefault();
+            alert('Bitte geben Sie eine gültige E-Mail-Adresse ein.');
         }
     } else {
-        alert('Please fill out all fields.');
+        e.preventDefault();
+        alert('Bitte füllen Sie alle Felder aus.');
     }
 });

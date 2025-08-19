@@ -293,7 +293,7 @@
             <div class="project-card" data-project="fitness">
                 <div class="project-header">
                     <h3 class="project-title">💪 FitnessTracker</h3>
-                    <span class="project-status development">In Entwicklung</span>
+                    <span class="project-status completed">Abgeschlossen</span>
                 </div>
                 <p>Umfassende C# Desktop-Anwendung für Fitness-Tracking mit Workout-Protokollierung, Körpermaße-Verfolgung, Trainingsplänen und Fortschrittsvisualisierung. Verwendet Entity Framework Core und SQL Server.</p>
                 <div class="tech-stack">
@@ -312,7 +312,7 @@
             <div class="project-card" data-project="solana">
                 <div class="project-header">
                     <h3 class="project-title">🤖 Rust Solana Bot</h3>
-                    <span class="project-status development">In Entwicklung</span>
+                    <span class="project-status completed">Abgeschlossen</span>
                 </div>
                 <p>Ein fortschrittlicher Trading-Bot für die Solana-Blockchain, entwickelt in Rust. Implementiert automatisierte Handelsstrategien, Portfolio-Management und Echtzeit-Marktanalyse mit WebSocket-Verbindungen.</p>
                 <div class="tech-stack">
@@ -429,17 +429,17 @@
                 📄 Lebenslauf herunterladen
             </a>
         </div>
-        <form class="contact-form" id="contactForm">
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mdkdrgng" method="POST">
             <div class="form-group">
-                <input type="text" class="form-input" id="name" placeholder=" " required>
+                <input type="text" class="form-input" id="name" name="name" placeholder=" " required>
                 <label class="form-label" for="name">Dein Name</label>
             </div>
             <div class="form-group">
-                <input type="email" class="form-input" id="email" placeholder=" " required>
+                <input type="email" class="form-input" id="email" name="email" placeholder=" " required>
                 <label class="form-label" for="email">E-Mail-Adresse</label>
             </div>
             <div class="form-group">
-                <textarea class="form-input" id="message" rows="5" placeholder=" " required></textarea>
+                <textarea class="form-input" id="message" name="message" rows="5" placeholder=" " required></textarea>
                 <label class="form-label" for="message">Nachricht</label>
             </div>
             <button type="submit" class="submit-btn">Nachricht senden</button>
