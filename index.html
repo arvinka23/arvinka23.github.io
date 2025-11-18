@@ -2,469 +2,349 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seyedarvin Kasipourazbari - Interaktives Entwickler-Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Seyedarvin Kasipourazbari · IMS Student & Full-Stack Entwickler</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    
-    <!-- Scroll Progress Bar -->
-    <div class="progress-bar"></div>
-    
-    <!-- Matrix Background -->
-    <canvas class="matrix-bg" id="matrix"></canvas>
-    
-    <!-- Particles -->
-    <div class="particles" id="particles"></div>
-
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">SK.dev</div>
-            <button class="theme-toggle" aria-label="Hell/Dunkel Modus umschalten">
-                <span class="theme-icon">🌙</span>
+    <header class="site-header" data-scroll="top">
+        <div class="nav-wrapper">
+            <a class="brand" href="#home">Seyedarvin Kasipourazbari</a>
+            <button class="nav-toggle" aria-label="Navigation öffnen oder schliessen">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
-            <div class="hamburger" aria-label="Navigationsmenü umschalten">☰</div>
-            <ul class="nav-links">
-                <li><a href="#home">Start</a></li>
-                <li><a href="#skills">Fähigkeiten</a></li>
-                <li><a href="#about">Über mich</a></li>
-                <li><a href="#projects">Projekte</a></li>
-                <li><a href="#code">Code</a></li>
-                <li><a href="#internship">Praktikum</a></li>
-                <li><a href="#contact">Kontakt</a></li>
-            </ul>
-        </nav>
+            <nav class="nav">
+                <ul class="nav-links" role="list">
+                    <li><a href="#home">Start</a></li>
+                    <li><a href="#skills">Fähigkeiten</a></li>
+                    <li><a href="#experience">Werdegang</a></li>
+                    <li><a href="#projects">Projekte</a></li>
+                    <li><a href="#internship">Praktikum</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a class="nav-cta" href="285-cv-pattern.docx" download>Lebenslauf</a>
+                    <button class="theme-toggle" aria-label="Darstellungsmodus umschalten">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero fade-in">
-        <div class="hero-content">
-            <div class="terminal-container">
-                <div class="terminal-header">
-                    <div class="terminal-btn close"></div>
-                    <div class="terminal-btn minimize"></div>
-                    <div class="terminal-btn maximize"></div>
-                </div>
-                <div class="terminal-content">
-                    <div><span class="prompt">seyedarvin@dev:~$</span> whoami</div>
-                    <div>Seyedarvin Kasipourazbari</div>
-                    <div><span class="prompt">seyedarvin@dev:~$</span> cat fähigkeiten.txt</div>
-                    <div>Full-Stack Entwickler | IMS Student | Problemlöser</div>
-                    <div><span class="prompt">seyedarvin@dev:~$</span> ls technologien/</div>
-                    <div>HTML CSS JavaScript Python C# Rust SQL Docker</div>
-                    <div><span class="prompt">seyedarvin@dev:~$</span> echo "Bereit für Praktikumsmöglichkeiten"</div>
-                    <div>Bereit für Praktikumsmöglichkeiten</div>
-                    <div><span class="prompt">seyedarvin@dev:~$</span> cat praktikum_status.txt</div>
-                    <div>🎯 Aktuell auf der Suche nach einem IMS Praktikum</div>
-                    <div>📅 Verfügbar: August 2026 (12 Monate)</div>
-                    <div>📍 Standort: Schweiz (flexibel)</div>
-                    <div>🎓 Kantonsschule Baden - IMS Applikationsentwicklung</div>
-                    <div><span class="prompt">seyedarvin@dev:~$</span> <span class="typing-text" id="typing"></span></div>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-text">
+                <p class="eyebrow">IMS Applikationsentwicklung · Kantonsschule Baden</p>
+                <h1>Ich entwickle digitale Produkte, die zuverlässig funktionieren.</h1>
+                <p class="intro">
+                    Full-Stack Entwickler mit Fokus auf klare Kommunikation, strukturierte Softwareentwicklung und nachhaltige Lösungen.
+                    Ab Sommer 2026 für ein 12-monatiges IMS Praktikum verfügbar.
+                </p>
+                <ul class="hero-bullets">
+                    <li>Praxis in C#, .NET, JavaScript, Rust</li>
+                    <li>Saubere Code-Standards & Testabdeckung</li>
+                    <li>Teamarbeit, Kundenkontakt & Projektführung</li>
+                </ul>
+                <div class="hero-cta">
+                    <a class="btn primary" href="285-cv-pattern.docx" download>Lebenslauf herunterladen</a>
+                    <a class="btn ghost" href="#contact">Kontakt aufnehmen</a>
                 </div>
             </div>
-            
-            <div class="profile-section">
-                <img src="profile.jpg" alt="Seyedarvin Kasipourazbari" class="profile-image">
-                <div class="profile-info">
-                    <h1>Seyedarvin Kasipourazbari</h1>
-                    <p class="profile-subtitle">IMS Student | Full-Stack Entwickler</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section fade-in">
-        <h2 class="section-title">Interaktiver Fähigkeiten-Radar</h2>
-        <div class="skills-radar">
-            <canvas id="skillsCanvas" width="400" height="400"></canvas>
-            <div class="skill-tooltip" id="skillTooltip"></div>
-        </div>
-        <p>Bewege die Maus über den Radar, um detaillierte Informationen zu sehen</p>
-    </section>
-
-    <!-- About Me Section -->
-    <section id="about" class="about-section fade-in">
-        <h2 class="section-title">Über mich</h2>
-        
-        <!-- Personal Info Cards -->
-        <div class="personal-info-grid">
-            <div class="info-card">
-                <div class="info-icon">👨‍💻</div>
-                <h3>Wer bin ich?</h3>
-                <p><strong>Seyedarvin Kasipourazbari</strong>, geboren 2006, wohne seit 5 Jahren in der Schweiz. IMS Student der Kantonsschule Baden mit Schwerpunkt Applikationsentwicklung.</p>
-            </div>
-            
-            <div class="info-card">
-                <div class="info-icon">🎯</div>
-                <h3>Meine Mission</h3>
-                <p>Programmieren ist für mich eine Lebenseinstellung. Ich liebe es, komplexe Probleme zu analysieren und innovative Lösungen zu entwickeln.</p>
-            </div>
-            
-            <div class="info-card">
-                <div class="info-icon">🚀</div>
-                <h3>Meine Stärken</h3>
-                <p>Schnelles Lernen neuer Technologien, analytisches Denken, strategisches Problemlösen und kontinuierliche Weiterentwicklung.</p>
-            </div>
-        </div>
-
-        <!-- Skills Overview -->
-        <div class="skills-overview">
-            <h3 class="section-subtitle">Meine Fähigkeiten</h3>
-            <div class="skills-cards-grid">
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <div class="skill-icon">💻</div>
-                        <h4>Programmiersprachen</h4>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">C#</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
+            <div class="hero-profile">
+                <div class="profile-card">
+                    <img src="profile.jpg" alt="Portrait von Seyedarvin Kasipourazbari">
+                    <div class="profile-info">
+                        <p class="name">Seyedarvin Kasipourazbari</p>
+                        <p class="role">IMS Student · Full-Stack Entwicklung</p>
+                        <dl>
+                            <div>
+                                <dt>Standort</dt>
+                                <dd>Schweiz · flexibel</dd>
                             </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">JavaScript</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
+                            <div>
+                                <dt>Verfügbarkeit</dt>
+                                <dd>August 2026 – Juli 2027</dd>
                             </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Python</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%"></div>
+                            <div>
+                                <dt>Sprachen</dt>
+                                <dd>Deutsch C1 · Englisch B2</dd>
                             </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">HTML/CSS</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Rust</span>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 70%"></div>
-                            </div>
-                        </div>
+                        </dl>
                     </div>
                 </div>
-
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <div class="skill-icon">🌍</div>
-                        <h4>Sprachen</h4>
+                <div class="hero-metrics">
+                    <div>
+                        <span>25+</span>
+                        <p>Softwareprojekte</p>
                     </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-name">Deutsch</span>
-                            <span class="skill-level">C1 - Fliessend</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Persisch</span>
-                            <span class="skill-level">Muttersprache</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Englisch</span>
-                            <span class="skill-level">B2 - Gut</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Italienisch</span>
-                            <span class="skill-level">A2 - Grundkenntnisse</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-name">Französisch</span>
-                            <span class="skill-level">A1 - Basiskenntnisse</span>
-                        </div>
+                    <div>
+                        <span>3</span>
+                        <p>Jahre Programmiererfahrung</p>
                     </div>
-                </div>
-
-                <div class="skill-card">
-                    <div class="skill-header">
-                        <div class="skill-icon">🎯</div>
-                        <h4>Soft Skills</h4>
-                    </div>
-                    <div class="skill-items">
-                        <div class="skill-item">
-                            <span class="skill-icon-small">♟️</span>
-                            <span class="skill-name">Strategisches Denken</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon-small">🤝</span>
-                            <span class="skill-name">Teamarbeit</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon-small">💡</span>
-                            <span class="skill-name">Problemlösung</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon-small">📚</span>
-                            <span class="skill-name">Lernbereitschaft</span>
-                        </div>
-                        <div class="skill-item">
-                            <span class="skill-icon-small">🌍</span>
-                            <span class="skill-name">Interkulturell</span>
-                        </div>
+                    <div>
+                        <span>6+</span>
+                        <p>Programmiersprachen aktiv</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Journey Timeline -->
-        <div class="journey-section">
-            <h3 class="section-subtitle">Mein Bildungsweg</h3>
-            <div class="timeline-container">
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2013-2019</div>
-                        <h4>Primarschule, Teheran</h4>
-                        <p>Grundausbildung und erste Schritte in der Bildung</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2019-2020</div>
-                        <h4>Oberstufe, Teheran</h4>
-                        <p>Vertiefung der Grundkenntnisse vor dem Umzug</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2020</div>
-                        <h4>Deutschkurs, Untersiggenthal</h4>
-                        <p>Intensive Sprachausbildung für die Integration</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2020-2022</div>
-                        <h4>Sekundarschule Untersiggenthal</h4>
-                        <p>Anpassung an das Schweizer Bildungssystem</p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2022-2023</div>
-                        <h4>Bezirksschule Turgi</h4>
-                        <p>Vorbereitung auf die höhere Bildung</p>
-                    </div>
-                </div>
-                <div class="timeline-item active">
-                    <div class="timeline-marker active"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2023-2026</div>
-                        <h4>IMS - Applikationsentwicklung</h4>
-                        <p>Kantonsschule Baden - Fachrichtung Applikationsentwicklung</p>
-                    </div>
-                </div>
-                <div class="timeline-item future">
-                    <div class="timeline-marker future"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-year">2026-2027</div>
-                        <h4>IMS Praktikum (12 Monate)</h4>
-                        <p>Einjähriges Praktikum in der Applikationsentwicklung</p>
-                    </div>
-                </div>
+        <section id="skills" class="section">
+            <div class="section-header">
+                <p class="eyebrow">Kompetenzprofil</p>
+                <h2>Technische & methodische Stärken</h2>
+                <p>Ich verbinde saubere Architektur mit einem klaren Blick für Benutzerbedürfnisse.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section fade-in">
-        <h2 class="section-title">Ausgewählte Projekte</h2>
-        <div class="projects-grid">
-            <div class="project-card" data-project="icontale">
-                <div class="project-header">
-                    <h3 class="project-title">🎮 IconTale</h3>
-                    <span class="project-status live">Live</span>
-                </div>
-                <p>Eine interaktive Emoji-Story-Plattform, wo Spieler kreative Geschichten mit Emojis schreiben und erraten können. Features inklusive Lobby-System, Echtzeit-Spiel, und KI-gestützte Emoji-Vorschläge.</p>
-                <div class="tech-stack">
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">WebSocket</span>
-                    <span class="tech-tag">HTML/CSS</span>
-                    <span class="tech-tag">Render</span>
-                </div>
-                <div class="project-links">
-                    <button onclick="openProject('icontale')" class="project-link">📖 Details</button>
-                </div>
-            </div>
-            
-            <div class="project-card" data-project="fitness">
-                <div class="project-header">
-                    <h3 class="project-title">💪 FitnessTracker</h3>
-                    <span class="project-status completed">Abgeschlossen</span>
-                </div>
-                                        <p>Umfassende C# Desktop-Anwendung für Fitness-Tracking mit Workout-Protokollierung, Körpermasse-Verfolgung, Trainingsplänen und Fortschrittsvisualisierung. Verwendet Entity Framework Core und SQL Server.</p>
-                <div class="tech-stack">
-                    <span class="tech-tag">C#</span>
-                    <span class="tech-tag">.NET</span>
-                    <span class="tech-tag">WinForms</span>
-                    <span class="tech-tag">Entity Framework</span>
-                    <span class="tech-tag">SQL Server</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/arvinka23/Fitnesstracker" target="_blank" class="project-link github-link">📂 GitHub</a>
-                    <button onclick="openProject('fitness')" class="project-link">📖 Details</button>
-                </div>
-            </div>
-            
-            <div class="project-card" data-project="solana">
-                <div class="project-header">
-                    <h3 class="project-title">🤖 Rust Solana Bot</h3>
-                    <span class="project-status completed">Abgeschlossen</span>
-                </div>
-                <p>Ein fortschrittlicher Trading-Bot für die Solana-Blockchain, entwickelt in Rust. Implementiert automatisierte Handelsstrategien, Portfolio-Management und Echtzeit-Marktanalyse mit WebSocket-Verbindungen.</p>
-                <div class="tech-stack">
-                    <span class="tech-tag">Rust</span>
-                    <span class="tech-tag">Solana</span>
-                    <span class="tech-tag">WebSocket</span>
-                    <span class="tech-tag">Blockchain</span>
-                    <span class="tech-tag">Trading API</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://github.com/arvinka23/rust-solana-bot" target="_blank" class="project-link github-link">📂 GitHub</a>
-                    <button onclick="openProject('solana')" class="project-link">📖 Details</button>
-                </div>
-            </div>
-            
-            <div class="project-card" data-project="chess">
-                <div class="project-header">
-                    <h3 class="project-title">♟️ Schachspiel</h3>
-                    <span class="project-status live">Live</span>
-                </div>
-                <p>Ein vollständig funktionsfähiges Online-Schachspiel mit Timer-Funktion. Spieler können gegeneinander antreten mit einem 10-Minuten-Timer pro Spieler. Perfekt für schnelle Partien und Turniere.</p>
-                <div class="tech-stack">
-                    <span class="tech-tag">HTML5</span>
-                    <span class="tech-tag">CSS3</span>
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">GitHub Pages</span>
-                </div>
-                <div class="project-links">
-                    <a href="https://arvinka23.github.io/Schachspiel/" target="_blank" class="project-link live-link">🎮 Live Demo</a>
-                    <button onclick="openProject('chess')" class="project-link">📖 Details</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Internship Section -->
-    <section id="internship" class="internship-section fade-in">
-        <h2 class="section-title">🎯 Praktikumssuche</h2>
-        <div class="internship-content">
-            <div class="internship-card">
-                <div class="internship-header">
-                    <h3>Warum ich?</h3>
-                    <div class="internship-icon">💼</div>
-                </div>
-                <div class="internship-text">
-                    <p>Als <strong>IMS Student der Kantonsschule Baden mit Schwerpunkt Applikationsentwicklung</strong> suche ich ein einjähriges Praktikum (August 2026 - Juli 2027), um meine praktischen Fähigkeiten zu erweitern und in einem professionellen Umfeld zu arbeiten.</p>
-                    
-                    <div class="internship-highlights">
-                        <div class="highlight-item">
-                            <span class="highlight-icon">🚀</span>
-                            <span>Erfahrung mit modernen Technologien (C#, JavaScript, Python, Rust)</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-icon">💡</span>
-                            <span>Problemlösungsorientiert und schnell lernfähig</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-icon">🌍</span>
-                            <span>Mehrsprachig (Deutsch C1, Englisch B2, Persisch Muttersprache)</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-icon">♟️</span>
-                            <span>Strategisches Denken durch Schach (Schweizer Meister U20)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="internship-details">
-                <div class="detail-card">
-                    <h4>📅 Verfügbarkeit</h4>
+            <div class="cards-grid">
+                <article class="card">
+                    <h3>Technologien</h3>
                     <ul>
-                        <li><strong>Zeitraum:</strong> August 2026 - Juli 2027</li>
-                        <li><strong>Dauer:</strong> 12 Monate (einjähriges Praktikum)</li>
-                        <li><strong>Standort:</strong> Schweiz (flexibel)</li>
-                        <li><strong>Arbeitsmodell:</strong> Vor Ort oder Hybrid</li>
+                        <li><strong>Backend:</strong> C#, .NET, Entity Framework, SQL Server</li>
+                        <li><strong>Frontend:</strong> TypeScript, React, Tailwind CSS</li>
+                        <li><strong>Scripting:</strong> Python (Automatisierung, ML-Basics)</li>
+                        <li><strong>DevOps:</strong> Docker, GitHub Actions, Render</li>
+                    </ul>
+                </article>
+                <article class="card">
+                    <h3>Arbeitsweise</h3>
+                    <ul>
+                        <li>Anforderungsanalyse & Stakeholder-Dialog</li>
+                        <li>Modulare Architektur & Clean Code Prinzipien</li>
+                        <li>Versionierung mit Git & Code Reviews</li>
+                        <li>Tests, Monitoring & kontinuierliche Verbesserung</li>
+                    </ul>
+                </article>
+                <article class="card">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Teamorientierte Kommunikation (DE/EN)</li>
+                        <li>Strategisches Denken (Schweizer Schachmeister U20)</li>
+                        <li>Schnelle Entscheidungsfähigkeit unter Druck</li>
+                        <li>Kulturelle Adaptionsfähigkeit & Lernbereitschaft</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="experience" class="section muted">
+            <div class="section-header">
+                <p class="eyebrow">Werdegang</p>
+                <h2>Bildungsweg & Praxis</h2>
+            </div>
+            <ol class="timeline">
+                <li>
+                    <div>
+                        <p class="timeframe">2023 – 2026</p>
+                        <h3>Kantonsschule Baden · IMS Applikationsentwicklung</h3>
+                        <p>Vertiefung in Software Engineering, Projektmanagement und individuelles Praxisprojekt (IPA).</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p class="timeframe">2020 – 2023</p>
+                        <h3>Sekundarschule & Bezirksschule · Aargau</h3>
+                        <p>Fokus auf Mathematik, Naturwissenschaften und Einstieg in die Softwareentwicklung.</p>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p class="timeframe">2013 – 2020</p>
+                        <h3>Schulbildung · Teheran & Deutschkurs Untersiggenthal</h3>
+                        <p>Fundierte schulische Basis, Sprachaufbau sowie internationale Perspektive.</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section id="projects" class="section">
+            <div class="section-header">
+                <p class="eyebrow">Projekte</p>
+                <h2>Auswahl relevanter Arbeiten</h2>
+            </div>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <div class="project-meta">
+                        <p class="project-status live">Live</p>
+                        <h3>🎮 IconTale</h3>
+                    </div>
+                    <p>Realtime Web-App mit Lobby-System, WebSockets und responsivem UI. Fokus auf resiliente Backend-Architektur und performante Frontend-Komponenten.</p>
+                    <div class="tags">
+                        <span>Node.js</span>
+                        <span>WebSocket</span>
+                        <span>TypeScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/arvinka23/icontale" target="_blank" rel="noopener">GitHub</a>
+                        <a href="https://icontale.onrender.com/" target="_blank" rel="noopener">Live Demo</a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-meta">
+                        <p class="project-status secondary">Abgeschlossen</p>
+                        <h3>💪 FitnessTracker</h3>
+                    </div>
+                    <p>Modulare C# Anwendung mit Entity Framework, Reporting und Datenvisualisierung. Umsetzung kompletter CRUD-Flows inkl. Authentifizierung.</p>
+                    <div class="tags">
+                        <span>C#</span>
+                        <span>.NET</span>
+                        <span>SQL Server</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/arvinka23/Fitnesstracker" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-meta">
+                        <p class="project-status secondary">Abgeschlossen</p>
+                        <h3>🤖 Rust Solana Bot</h3>
+                    </div>
+                    <p>Performance-orientierter Trading-Bot mit WebSocket-Streaming, Portfolio-Management und Risiko-Monitoring. Schwerpunkt auf Effizienz und Monitoring.</p>
+                    <div class="tags">
+                        <span>Rust</span>
+                        <span>Solana</span>
+                        <span>WebSocket</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/arvinka23/rust-solana-bot" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-meta">
+                        <p class="project-status development">In Entwicklung</p>
+                        <h3>🚗 Parkly · Parkplatz-Finder</h3>
+                    </div>
+                    <p>Kostenlose, crowdsourcing-basierte Parkplatz-App auf OpenStreetMap. Echtzeit-Status, Gamification und Betriebskosten von 0–10 CHF/Jahr.</p>
+                    <div class="tags">
+                        <span>Next.js 15</span>
+                        <span>TypeScript</span>
+                        <span>Tailwind</span>
+                        <span>Leaflet</span>
+                        <span>Supabase</span>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>Community-Reports, GPS-Automatismen & Gamification</li>
+                        <li>Projektstruktur mit App Router, MapContent & supabase.ts</li>
+                        <li>Deployment auf Vercel / Supabase Free Tier</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/arvinka23/Lernperiode-11" target="_blank" rel="noopener">GitHub</a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-meta">
+                        <p class="project-status live">Live</p>
+                        <h3>💼 DigiFlow Landingpage</h3>
+                    </div>
+                    <p>Conversion-optimierte Landingpage für digitale Services mit klaren CTA-Flows, responsiven Sektionen und Hosting auf Render.</p>
+                    <div class="tags">
+                        <span>HTML5</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Render</span>
+                    </div>
+                    <ul class="project-highlights">
+                        <li>Mehrstufige Produkt- & Service-Abschnitte</li>
+                        <li>Animations- & Performance-Tuning</li>
+                        <li>Monitoring & Deploy via Render</li>
+                    </ul>
+                    <div class="project-links">
+                        <a href="https://github.com/arvinka23/DigiFlow" target="_blank" rel="noopener">GitHub</a>
+                        <a href="https://digiflow.onrender.com/" target="_blank" rel="noopener">Website</a>
+                    </div>
+                </article>
+                <article class="project-card">
+                    <div class="project-meta">
+                        <p class="project-status live">Live</p>
+                        <h3>♟️ Schachspiel</h3>
+                    </div>
+                    <p>Online-Schach mit Timer-Funktion, optimiert für schnelle Matches. Bereitgestellt über GitHub Pages mit responsiver Oberfläche.</p>
+                    <div class="tags">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://arvinka23.github.io/Schachspiel/" target="_blank" rel="noopener">Live Demo</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="internship" class="section highlight">
+            <div class="section-header">
+                <p class="eyebrow">Praktikum 2026/27</p>
+                <h2>12 Monate Verantwortung übernehmen</h2>
+                <p>Ich suche ein Umfeld, in dem ich produktiv zum Team beitragen kann und gleichzeitig professionell wachse.</p>
+            </div>
+            <div class="highlight-grid">
+                <article class="highlight-card">
+                    <h3>Was ich mitbringe</h3>
+                    <ul>
+                        <li>Erfahrung mit produktionsnahen Projekten & Deployment</li>
+                        <li>Saubere Dokumentation in Deutsch & Englisch</li>
+                        <li>Mentale Stärke durch Leistungssport (Schach)</li>
+                        <li>Verantwortungsbewusster Umgang mit Kundendaten</li>
+                    </ul>
+                </article>
+                <article class="highlight-card">
+                    <h3>Rahmenbedingungen</h3>
+                    <ul>
+                        <li>Start: August 2026 · Dauer: 12 Monate</li>
+                        <li>Standort: Schweiz · offen für Hybrid</li>
+                        <li>Fokus: Full-Stack, Web, Desktop, Blockchain</li>
+                        <li>Ziel: Zukunftsfähige, wartbare Lösungen liefern</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="section-header">
+                <p class="eyebrow">Kontakt</p>
+                <h2>Gemeinsam Projekte realisieren</h2>
+                <p>Ich freue mich über Austausch zu Praktikums- oder Projektmöglichkeiten.</p>
+            </div>
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <h3>Direkter Kontakt</h3>
+                    <p>Ich antworte in der Regel innerhalb von 24 Stunden.</p>
+                    <ul>
+                        <li><strong>E-Mail:</strong> <a href="mailto:seyedarvin.kasipourazbari.dev@gmail.com">seyedarvin.kasipourazbari.dev@gmail.com</a></li>
+                        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/seyedarvin-kasipourazbari-6583b1355/" target="_blank" rel="noopener">Profil ansehen</a></li>
+                        <li><strong>GitHub:</strong> <a href="https://github.com/arvinka23" target="_blank" rel="noopener">@arvinka23</a></li>
                     </ul>
                 </div>
-                
-                <div class="detail-card">
-                    <h4>🎯 Interessengebiete</h4>
-                    <ul>
-                        <li>Full-Stack Entwicklung</li>
-                        <li>Web-Entwicklung</li>
-                        <li>Desktop-Anwendungen</li>
-                        <li>Blockchain-Technologien</li>
-                        <li>Machine Learning</li>
-                    </ul>
-                </div>
-                
-                <div class="detail-card">
-                    <h4>📚 Aktuelle Ausbildung</h4>
-                    <ul>
-                        <li><strong>Schule:</strong> Kantonsschule Baden</li>
-                        <li><strong>Richtung:</strong> IMS Applikationsentwicklung</li>
-                        <li><strong>Abschluss:</strong> Sommer 2026</li>
-                        <li><strong>Fokus:</strong> C#, .NET, Web-Technologien</li>
-                        <li><strong>IPA:</strong> Individuelle praktische Arbeit</li>
-                    </ul>
-                </div>
+                <form class="contact-form" id="contactForm" action="https://formspree.io/f/mdkdrgng" method="POST">
+                    <label>
+                        <span>Name</span>
+                        <input type="text" name="name" required>
+                    </label>
+                    <label>
+                        <span>E-Mail</span>
+                        <input type="email" name="email" required>
+                    </label>
+                    <label>
+                        <span>Nachricht</span>
+                        <textarea name="message" rows="5" required></textarea>
+                    </label>
+                    <button type="submit" class="btn primary full">Nachricht senden</button>
+                    <div class="form-loading" id="formLoading" hidden>Wird gesendet…</div>
+                </form>
             </div>
-            
+        </section>
+    </main>
 
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section fade-in">
-        <h2 class="section-title">Lass uns vernetzen</h2>
-        <div class="contact-actions">
-            <a href="285-cv-pattern.docx" class="cv-download-btn" download>
-                📄 Lebenslauf herunterladen
-            </a>
-        </div>
-        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mdkdrgng" method="POST">
-            <div class="form-group">
-                <input type="text" class="form-input" id="name" name="name" placeholder=" " required>
-                <label class="form-label" for="name">Dein Name</label>
-            </div>
-            <div class="form-group">
-                <input type="email" class="form-input" id="email" name="email" placeholder=" " required>
-                <label class="form-label" for="email">E-Mail-Adresse</label>
-            </div>
-            <div class="form-group">
-                <textarea class="form-input" id="message" name="message" rows="5" placeholder=" " required></textarea>
-                <label class="form-label" for="message">Nachricht</label>
-            </div>
-            <button type="submit" class="submit-btn">Nachricht senden</button>
-            <div class="form-loading" id="formLoading" style="display: none;">Wird gesendet...</div>
-        </form>
-    </section>
-
-    <!-- Modal for Project Details -->
-    <div class="modal" id="projectModal" role="dialog" aria-labelledby="modalTitle">
-        <div class="modal-content">
-                            <span class="close-modal" aria-label="Modal schliessen">×</span>
-            <div id="modal-body"></div>
-        </div>
-    </div>
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Seyedarvin Kasipourazbari. Bereit für neue Herausforderungen.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
 </html>
+
