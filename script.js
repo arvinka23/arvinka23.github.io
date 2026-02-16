@@ -46,3 +46,27 @@ if (yearSpan) {
     yearSpan.textContent = new Date().getFullYear();
 }
 
+document.querySelectorAll('.project-preview img').forEach((img) => {
+    const label = img.nextElementSibling;
+    if (!label) return;
+    img.addEventListener('load', () => { label.style.display = 'none'; });
+    img.addEventListener('error', () => {
+        img.style.display = 'none';
+        label.style.display = '';
+    });
+});
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.project-card, .card, .highlight-card, .timeline li').forEach((el) => {
+    el.classList.add('fade-in');
+    observer.observe(el);
+});
+
