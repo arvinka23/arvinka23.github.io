@@ -65,7 +65,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.project-card, .card, .highlight-card, .timeline li').forEach((el) => {
+document.querySelectorAll('.project-card, .card, .highlight-card, .timeline li, .testimonial-card, .blog-card').forEach((el) => {
     el.classList.add('fade-in');
     observer.observe(el);
 });

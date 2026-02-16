@@ -644,6 +644,135 @@ body.light-mode .project-highlights {
     margin-bottom: 0.4rem;
 }
 
+/* Testimonials */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.testimonial-card {
+    background-color: var(--bg-soft);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.2rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .testimonial-card {
+    background-color: var(--card);
+    border-color: var(--border);
+}
+
+body.light-mode .testimonial-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial-text {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+}
+
+body.light-mode .testimonial-text {
+    color: var(--text);
+}
+
+.testimonial-author {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1rem;
+    margin-top: auto;
+}
+
+body.light-mode .testimonial-author {
+    border-top-color: var(--border);
+}
+
+.author-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.author-role {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+body.light-mode .author-role {
+    color: var(--text-muted);
+}
+
+/* Blog */
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.blog-card {
+    background-color: var(--bg-soft);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.2rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .blog-card {
+    background-color: var(--card);
+    border-color: var(--border);
+}
+
+body.light-mode .blog-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.blog-date {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    font-weight: 500;
+}
+
+.blog-card h3 {
+    font-size: 1.15rem;
+    line-height: 1.4;
+}
+
+.blog-card > p:not(.blog-date) {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    flex: 1;
+}
+
+body.light-mode .blog-card > p:not(.blog-date) {
+    color: var(--text-muted);
+}
+
+.blog-card .tags {
+    margin-top: auto;
+    padding-top: 0.5rem;
+}
+
+/* Highlight Grid */
 .highlight-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
