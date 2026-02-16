@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Von der Idee zum Deploy: Mein Weg mit DigiFlow · Arvin's Blog</title>
+    <meta name="description" content="Wie ich eine C# Blazor-Anwendung mit Projektverwaltung, Datenexport und Authentifizierung gebaut und auf Render deployed habe.">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%231e88e5'/><text x='50' y='68' font-size='52' font-weight='bold' font-family='system-ui' text-anchor='middle' fill='white'>SK</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="nav-wrapper">
+            <a class="brand" href="../index.html">Seyedarvin Kasipourazbari</a>
+            <button class="nav-toggle" aria-label="Navigation öffnen oder schliessen">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav-links" role="list">
+                    <li><a href="../index.html">Start</a></li>
+                    <li><a href="../index.html#projects">Projekte</a></li>
+                    <li><a href="../index.html#blog">Blog</a></li>
+                    <li><a href="../index.html#contact">Kontakt</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="theme-toggle" aria-label="Darstellungsmodus umschalten">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article class="blog-post">
+            <a href="../index.html#blog" class="back-link">&larr; Zurück zum Blog</a>
+
+            <header class="blog-post-header">
+                <div class="tags">
+                    <span>C#</span>
+                    <span>Blazor</span>
+                    <span>DevOps</span>
+                </div>
+                <h1>Von der Idee zum Deploy: Mein Weg mit DigiFlow</h1>
+                <p class="blog-post-meta">Januar 2026 · 6 Min. Lesezeit</p>
+            </header>
+
+            <section class="blog-post-body">
+                <p class="lead">DigiFlow begann als Schulprojekt im Modul 295 und wurde zu einer vollständigen Webanwendung für Projektverwaltung. Der Weg von der ersten Idee bis zum Live-Deployment auf Render hat mir mehr über Software Engineering beigebracht als jedes Tutorial.</p>
+
+                <h2>Die Ausgangslage</h2>
+                <p>Die Aufgabe im Modul 295 war klar: Eine Backend-Anwendung planen, entwickeln, testen und deployen. Ich wollte über das Minimum hinausgehen und eine Anwendung bauen, die ich selbst benutzen würde.</p>
+                <p>DigiFlow sollte Teams helfen, ihre digitalen Projekte zu verwalten -- mit Authentifizierung, Datenexport und einer sauberen Benutzeroberfläche.</p>
+
+                <h2>Tech-Stack Entscheidung</h2>
+                <p>Warum <strong>C# mit Blazor</strong>? Drei Gründe:</p>
+                <ul>
+                    <li><strong>Full-Stack mit einer Sprache</strong> -- C# für Backend und Frontend, kein Context-Switch</li>
+                    <li><strong>Entity Framework</strong> -- ORM mit Migrations, spart enorm Zeit bei Datenbankänderungen</li>
+                    <li><strong>.NET-Ökosystem</strong> -- Dependency Injection, Middleware, Authentication sind built-in</li>
+                </ul>
+                <p>Für die Datenbank habe ich SQLite gewählt -- leichtgewichtig, ideal für Prototyping und einfach auf Render zu deployen.</p>
+
+                <h2>Architektur</h2>
+                <p>Die Anwendung folgt dem Clean Architecture Pattern:</p>
+                <ul>
+                    <li><strong>Domain Layer</strong> -- Entities und Business Logic</li>
+                    <li><strong>Application Layer</strong> -- Services, DTOs, Interfaces</li>
+                    <li><strong>Infrastructure Layer</strong> -- Entity Framework, externe APIs</li>
+                    <li><strong>Presentation Layer</strong> -- Blazor Server Components</li>
+                </ul>
+                <p>Diese Trennung hat sich bezahlt gemacht, als ich die Datenbank-Migration von SQL Server auf SQLite durchführen musste -- nur der Infrastructure Layer war betroffen.</p>
+
+                <h2>Features im Detail</h2>
+                <h3>Authentifizierung</h3>
+                <p>Ich habe ASP.NET Identity implementiert mit Cookie-basierter Session-Verwaltung. Login, Registrierung und Passwort-Reset -- alles mit den built-in Security-Features von .NET.</p>
+
+                <h3>Projektverwaltung</h3>
+                <p>CRUD-Operationen für Projekte, Aufgaben und Teammitglieder. Jedes Projekt hat einen Status-Workflow (Entwurf → Aktiv → Abgeschlossen), der mit State Machine Pattern umgesetzt ist.</p>
+
+                <h3>Datenexport</h3>
+                <p>Export als CSV und PDF. Der PDF-Generator nutzt eine Template-Engine, die dynamisch Tabellen und Charts rendert. Ein Feature, das ich zuerst für unnötig hielt -- bis ich es selbst brauchte.</p>
+
+                <h2>Deployment auf Render</h2>
+                <p>Das Deployment war die grösste Herausforderung. Render unterstützt .NET-Apps, aber die Konfiguration erfordert einige Tricks:</p>
+                <ul>
+                    <li>Docker-Container mit Multi-Stage Build für kleine Image-Grösse</li>
+                    <li>Environment Variables für Connection Strings und Secrets</li>
+                    <li>Health Checks, damit Render weiss, wann die App bereit ist</li>
+                    <li>Persistenter Storage für die SQLite-Datenbank</li>
+                </ul>
+
+                <h2>Lessons Learned</h2>
+                <ul>
+                    <li><strong>Migrations planen</strong> -- Datenbankänderungen müssen vorwärts- und rückwärtskompatibel sein</li>
+                    <li><strong>Error Handling zentralisieren</strong> -- Ein globaler Exception Handler spart Hunderte try-catch-Blöcke</li>
+                    <li><strong>Deployment von Tag 1</strong> -- Ich hätte von Anfang an auf Render deployen sollen, nicht erst am Ende</li>
+                    <li><strong>Logging ist kein Luxus</strong> -- Structured Logging mit Serilog hat mir beim Debugging in Production Stunden gespart</li>
+                </ul>
+
+                <div class="blog-post-cta">
+                    <a href="https://digiflow.onrender.com/" target="_blank" rel="noopener" class="btn primary">DigiFlow ansehen</a>
+                    <a href="https://github.com/arvinka23/DigiFlow" target="_blank" rel="noopener" class="btn ghost">Code auf GitHub</a>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Seyedarvin Kasipourazbari. Bereit für neue Herausforderungen.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

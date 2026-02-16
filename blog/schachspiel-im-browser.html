@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wie ich ein Schachspiel im Browser gebaut habe · Arvin's Blog</title>
+    <meta name="description" content="Von der ersten Figur bis zur Schachmatt-Erkennung: Alle FIDE-Regeln in purem JavaScript umsetzen, ohne Frameworks.">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%231e88e5'/><text x='50' y='68' font-size='52' font-weight='bold' font-family='system-ui' text-anchor='middle' fill='white'>SK</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="nav-wrapper">
+            <a class="brand" href="../index.html">Seyedarvin Kasipourazbari</a>
+            <button class="nav-toggle" aria-label="Navigation öffnen oder schliessen">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav-links" role="list">
+                    <li><a href="../index.html">Start</a></li>
+                    <li><a href="../index.html#projects">Projekte</a></li>
+                    <li><a href="../index.html#blog">Blog</a></li>
+                    <li><a href="../index.html#contact">Kontakt</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="theme-toggle" aria-label="Darstellungsmodus umschalten">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article class="blog-post">
+            <a href="../index.html#blog" class="back-link">&larr; Zurück zum Blog</a>
+
+            <header class="blog-post-header">
+                <div class="tags">
+                    <span>JavaScript</span>
+                    <span>Game Dev</span>
+                    <span>Accessibility</span>
+                </div>
+                <h1>Wie ich ein vollständiges Schachspiel im Browser gebaut habe</h1>
+                <p class="blog-post-meta">Februar 2026 · 5 Min. Lesezeit</p>
+            </header>
+
+            <section class="blog-post-body">
+                <p class="lead">Als Schweizer Schachmeister U20 war es für mich nur eine Frage der Zeit, bis ich meine beiden Leidenschaften verbinde: Schach und Programmieren. Das Ergebnis ist ein vollständiges Schachspiel im Browser -- gebaut mit purem JavaScript, ohne Frameworks.</p>
+
+                <h2>Die Herausforderung</h2>
+                <p>Schach klingt einfach: 64 Felder, 32 Figuren, ein paar Regeln. Aber wer alle FIDE-Regeln korrekt umsetzen will, stösst schnell auf Komplexität. Rochade hat vier Vorbedingungen. En Passant gilt nur einen Zug lang. Bauernumwandlung braucht eine UI-Entscheidung. Und Schachmatt muss bei jedem Zug geprüft werden.</p>
+                <p>Mein Ziel war klar: <strong>Jede FIDE-Regel korrekt implementieren</strong>, inklusive Remis durch dreifache Stellungswiederholung und die 50-Züge-Regel.</p>
+
+                <h2>Architektur-Entscheidungen</h2>
+                <p>Ich habe bewusst auf Frameworks verzichtet. Das Projekt sollte zeigen, dass ich die Grundlagen beherrsche. Die Architektur besteht aus drei Schichten:</p>
+                <ul>
+                    <li><strong>Game Engine</strong> (<code>pieces.js</code>) -- Zuggenerierung, Validierung, Spielstand-Management</li>
+                    <li><strong>UI Layer</strong> (<code>app.js</code>) -- DOM-Manipulation, Drag & Drop, Animationen</li>
+                    <li><strong>Stylesheet</strong> (<code>style.css</code>) -- Responsive Board-Layout, Themes</li>
+                </ul>
+                <p>Die Engine speichert den Zustand als 8x8-Array und berechnet bei jedem Zug alle legalen Züge. Dabei werden Pins, Fesselungen und Schachgebote berücksichtigt.</p>
+
+                <h2>Drag & Drop ohne Libraries</h2>
+                <p>Die native HTML5 Drag & Drop API ist... herausfordernd. Besonders auf Touch-Geräten. Statt einer Library wie <code>interact.js</code> habe ich meine eigene Lösung gebaut:</p>
+                <ul>
+                    <li>Pointer Events statt separate Mouse/Touch-Handler</li>
+                    <li>Visual Feedback mit CSS <code>transform</code> statt DOM-Neuordnung</li>
+                    <li>Drop-Validierung in Echtzeit (nur legale Felder werden hervorgehoben)</li>
+                </ul>
+
+                <h2>Timer und PGN-Export</h2>
+                <p>Eine Schachuhr war ein Muss. Ich habe sie mit <code>setInterval</code> und einer Drift-Korrektur implementiert, damit die Zeit auch nach langen Partien genau bleibt. Der PGN-Export (Portable Game Notation) erlaubt es, Partien in andere Schachprogramme zu importieren.</p>
+
+                <h2>Barrierefreiheit</h2>
+                <p>Ein Aspekt, der oft vergessen wird: Schach im Browser muss auch mit der Tastatur spielbar sein. Jedes Feld ist fokussierbar, Figuren lassen sich mit Enter auswählen und mit den Pfeiltasten platzieren. Screen Reader erhalten ARIA-Labels für jeden Zug.</p>
+
+                <h2>Was ich gelernt habe</h2>
+                <ul>
+                    <li><strong>Testen ist alles</strong> -- Spezialfälle wie En Passant nach Rochade-Versuch brauchen gezielte Tests</li>
+                    <li><strong>State Management</strong> ist auch ohne Redux komplex -- mein Undo/Redo-Stack war der schwierigste Teil</li>
+                    <li><strong>Performance matters</strong> -- Die Zuggenerierung musste unter 16ms bleiben für flüssige Animationen</li>
+                    <li><strong>Accessibility von Anfang an</strong> einbauen ist 10x einfacher als nachträglich</li>
+                </ul>
+
+                <div class="blog-post-cta">
+                    <a href="https://arvinka23.github.io/Schachspiel/" target="_blank" rel="noopener" class="btn primary">Live Demo spielen</a>
+                    <a href="https://github.com/arvinka23/Schachspiel" target="_blank" rel="noopener" class="btn ghost">Code auf GitHub</a>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Seyedarvin Kasipourazbari. Bereit für neue Herausforderungen.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

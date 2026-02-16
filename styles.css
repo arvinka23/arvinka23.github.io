@@ -772,6 +772,168 @@ body.light-mode .blog-card > p:not(.blog-date) {
     padding-top: 0.5rem;
 }
 
+.blog-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    flex: 1;
+}
+
+.blog-card .read-more {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-top: auto;
+    padding-top: 0.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: gap 0.2s ease;
+}
+
+.blog-card:hover .read-more {
+    gap: 0.7rem;
+}
+
+/* Blog Post (individual article page) */
+.blog-post {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 0 4rem;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--accent);
+    font-weight: 500;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+    transition: gap 0.2s ease;
+}
+
+.back-link:hover {
+    gap: 0.7rem;
+}
+
+.blog-post-header {
+    margin-bottom: 3rem;
+}
+
+.blog-post-header h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-family: var(--font-alt);
+    line-height: 1.25;
+    margin: 1rem 0 0.75rem;
+}
+
+.blog-post-meta {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+body.light-mode .blog-post-meta {
+    color: var(--text-muted);
+}
+
+.blog-post-body {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+body.light-mode .blog-post-body {
+    color: var(--text);
+}
+
+.blog-post-body .lead {
+    font-size: 1.15rem;
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 2rem;
+    border-left: 3px solid var(--accent);
+    padding-left: 1.2rem;
+}
+
+body.light-mode .blog-post-body .lead {
+    color: var(--text);
+}
+
+.blog-post-body h2 {
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-alt);
+}
+
+.blog-post-body h3 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.blog-post-body p {
+    margin-bottom: 1.2rem;
+}
+
+.blog-post-body ul,
+.blog-post-body ol {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    list-style: disc;
+}
+
+.blog-post-body ol {
+    list-style: decimal;
+}
+
+.blog-post-body li {
+    margin-bottom: 0.6rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+body.light-mode .blog-post-body li {
+    color: var(--text-muted);
+}
+
+.blog-post-body code {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 0.15rem 0.5rem;
+    border-radius: 0.3rem;
+    font-size: 0.9em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body.light-mode .blog-post-body code {
+    background-color: var(--bg-muted);
+    color: var(--accent);
+}
+
+.blog-post-body strong {
+    font-weight: 600;
+    color: #fff;
+}
+
+body.light-mode .blog-post-body strong {
+    color: var(--text);
+}
+
+.blog-post-cta {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+}
+
+body.light-mode .blog-post-cta {
+    border-top-color: var(--border);
+}
+
 /* Highlight Grid */
 .highlight-grid {
     display: grid;

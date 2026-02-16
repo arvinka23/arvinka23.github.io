@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Warum ich Rust für Blockchain gewählt habe · Arvin's Blog</title>
+    <meta name="description" content="Rust bietet Memory Safety ohne Garbage Collector -- perfekt für einen Trading Bot auf Solana. Meine Erfahrungen mit WebSocket-Streaming und Portfolio-Management.">
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect rx='20' width='100' height='100' fill='%231e88e5'/><text x='50' y='68' font-size='52' font-weight='bold' font-family='system-ui' text-anchor='middle' fill='white'>SK</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="nav-wrapper">
+            <a class="brand" href="../index.html">Seyedarvin Kasipourazbari</a>
+            <button class="nav-toggle" aria-label="Navigation öffnen oder schliessen">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="nav">
+                <ul class="nav-links" role="list">
+                    <li><a href="../index.html">Start</a></li>
+                    <li><a href="../index.html#projects">Projekte</a></li>
+                    <li><a href="../index.html#blog">Blog</a></li>
+                    <li><a href="../index.html#contact">Kontakt</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="theme-toggle" aria-label="Darstellungsmodus umschalten">
+                        <span class="theme-icon">🌙</span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <article class="blog-post">
+            <a href="../index.html#blog" class="back-link">&larr; Zurück zum Blog</a>
+
+            <header class="blog-post-header">
+                <div class="tags">
+                    <span>Rust</span>
+                    <span>Solana</span>
+                    <span>Performance</span>
+                </div>
+                <h1>Warum ich Rust für Blockchain gewählt habe</h1>
+                <p class="blog-post-meta">Dezember 2025 · 5 Min. Lesezeit</p>
+            </header>
+
+            <section class="blog-post-body">
+                <p class="lead">Python wäre einfacher gewesen. JavaScript hätte ich schneller geschrieben. Aber für einen Trading Bot, der in Echtzeit Marktdaten verarbeitet und Transaktionen auf der Solana-Blockchain ausführt, war Rust die richtige Wahl. Hier erkläre ich warum.</p>
+
+                <h2>Das Projekt</h2>
+                <p>Mein Ziel war ein Bot, der über WebSocket-Streams Echtzeit-Preisdaten empfängt, Handelssignale berechnet und automatisch Transaktionen auf Solana ausführt. Gleichzeitig sollte er ein Portfolio verwalten und Risiko-Limits überwachen.</p>
+                <p>Die Anforderungen waren klar: <strong>niedrige Latenz</strong>, <strong>hohe Zuverlässigkeit</strong> und <strong>kein Speicherverlust</strong> bei 24/7-Betrieb.</p>
+
+                <h2>Warum nicht Python?</h2>
+                <p>Python ist grossartig für Prototyping. Aber für einen Bot, der rund um die Uhr läuft, gibt es Probleme:</p>
+                <ul>
+                    <li><strong>Global Interpreter Lock (GIL)</strong> -- echte Parallelität ist schwierig</li>
+                    <li><strong>Garbage Collection Pausen</strong> -- unvorhersehbare Latenz-Spikes</li>
+                    <li><strong>Memory Management</strong> -- Speicherlecks schleichen sich bei Langzeitbetrieb ein</li>
+                    <li><strong>Type Safety</strong> -- Runtime-Fehler bei finanziellen Operationen sind inakzeptabel</li>
+                </ul>
+
+                <h2>Was Rust bietet</h2>
+                <h3>Memory Safety ohne Garbage Collector</h3>
+                <p>Rusts Ownership-System garantiert zur Compile-Zeit, dass es keine Speicherlecks, Dangling Pointers oder Data Races gibt. Das bedeutet: Der Bot kann wochenlang laufen, ohne dass der Speicherverbrauch wächst.</p>
+
+                <h3>Zero-Cost Abstractions</h3>
+                <p>Generics, Traits und Iteratoren in Rust kosten keine Laufzeit-Performance. Ich kann abstrakten, lesbaren Code schreiben, der genauso schnell ist wie handoptimierter C-Code.</p>
+
+                <h3>Fearless Concurrency</h3>
+                <p>Mit <code>tokio</code> als Async Runtime kann der Bot gleichzeitig WebSocket-Streams lesen, Signale berechnen und Transaktionen senden -- ohne Race Conditions. Der Compiler verhindert diese Fehler bevor sie passieren.</p>
+
+                <h2>Architektur des Bots</h2>
+                <ul>
+                    <li><strong>Data Ingestion</strong> -- WebSocket-Client mit <code>tokio-tungstenite</code>, empfängt Preis-Feeds in Echtzeit</li>
+                    <li><strong>Signal Engine</strong> -- Berechnet technische Indikatoren (Moving Averages, RSI) auf einem Ring Buffer</li>
+                    <li><strong>Execution Layer</strong> -- Interagiert mit Solana via <code>solana-sdk</code>, signiert und sendet Transaktionen</li>
+                    <li><strong>Risk Manager</strong> -- Überwacht Portfolio-Exposure, Stop-Loss-Limits und maximale Position-Grössen</li>
+                    <li><strong>Monitoring</strong> -- Structured Logging und Metriken für Laufzeit-Überwachung</li>
+                </ul>
+
+                <h2>Herausforderungen</h2>
+                <h3>Die Lernkurve</h3>
+                <p>Rust ist nicht einfach. Der Borrow Checker hat mich anfangs frustriert. Aber nach zwei Wochen intensivem Lernen wurde er zu meinem besten Freund -- er findet Bugs, die in Python erst in Production aufgefallen wären.</p>
+
+                <h3>Solana SDK Dokumentation</h3>
+                <p>Die Solana-Dokumentation für Rust ist... lückenhaft. Ich musste oft den Quellcode der SDK lesen, um zu verstehen, wie Transaktionen korrekt aufgebaut werden. Das hat mir aber ein tiefes Verständnis der Blockchain-Internals gegeben.</p>
+
+                <h3>Testing von Echtzeit-Systemen</h3>
+                <p>Wie testet man einen Bot, der auf Live-Marktdaten reagiert? Mein Ansatz: Mock-Feeds mit aufgezeichneten Marktdaten, Property-Based Tests für die Signal Engine, und ein Paper-Trading-Modus für Integration Tests.</p>
+
+                <h2>Ergebnisse</h2>
+                <ul>
+                    <li><strong>Latenz</strong> -- Unter 2ms von Preis-Update bis Transaktions-Signierung</li>
+                    <li><strong>Speicher</strong> -- Konstant bei ~15MB nach 72h Dauerbetrieb</li>
+                    <li><strong>Zuverlässigkeit</strong> -- Kein einziger Crash während der Testphase</li>
+                </ul>
+
+                <h2>Fazit</h2>
+                <p>Rust ist nicht die einfachste Sprache, aber für performancekritische Systeme, die zuverlässig laufen müssen, gibt es wenig Alternativen. Die Investition in die Lernkurve hat sich gelohnt -- nicht nur für dieses Projekt, sondern für mein gesamtes Verständnis von Systems Programming.</p>
+                <p>Wenn du mit dem Gedanken spielst, Rust zu lernen: Tu es. Der Compiler ist streng, aber er macht dich zu einem besseren Programmierer.</p>
+
+                <div class="blog-post-cta">
+                    <a href="https://github.com/arvinka23/rust-solana-bot" target="_blank" rel="noopener" class="btn primary">Code auf GitHub</a>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <p>© <span id="year"></span> Seyedarvin Kasipourazbari. Bereit für neue Herausforderungen.</p>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
