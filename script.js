@@ -574,11 +574,23 @@ const bootstrap = async () => {
     }
 
     try {
-        const contentResponse = await fetch("content/portfolio-content.json");
-        if (!contentResponse.ok) throw new Error("Content loading failed");
-        state.content = await contentResponse.json();
+        if (window.__PORTFOLIO_CONTENT__) {
+            state.content = window.__PORTFOLIO_CONTENT__;
+        } else {
+            const contentResponse = await fetch("content/portfolio-content.json");
+            if (!contentResponse.ok) throw new Error("Content loading failed");
+            state.content = await contentResponse.json();
+        }
     } catch {
-        return;
+        if (window.__PORTFOLIO_CONTENT__) {
+            state.content = window.__PORTFOLIO_CONTENT__;
+        } else {
+            const errorBox = document.createElement("div");
+            errorBox.className = "mx-auto my-6 max-w-4xl rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700 dark:border-rose-900/40 dark:bg-rose-950/40 dark:text-rose-300";
+            errorBox.textContent = "Content konnte nicht geladen werden. Bitte Seite neu laden oder Cache leeren.";
+            document.body.prepend(errorBox);
+            return;
+        }
     }
 
     const savedTheme = (() => {
